@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hotel Accommodation And Booking System</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+<style>
+html, body{
+width: 100%;
+height: 100%;
+             
+}
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.submit{
+	display: block;
+	text-decoration: none;
+	padding: 0;
+    border: none;
+	font-size: 20px;
+}
+.payhere{
+	position: absolute;
+	text-decoration: none;
+	padding: 0;
+    border: none;
+	font-size: 20px;
+	margin-left: 90%;
+	margin-top: -4%;
+}
+.hotel-text{
+	position: absolute;
+	font-size: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+		</style>
+	</head>
+	<body>
+	
+			<div class="header">
+				<div class="wrap">
+					<div class="header-top">
+						<div class="hotel-text">
+							<a>URBAN HOTEL</a>
+						</div>
+						<div class="contact-info">
+							<p class="phone">Call us : <a href="#">8990</a></p>
+							<p class="gpa">Gpa : <a href="#">View map</a></p>
+						</div>
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<div class="header-top-nav">
+					<div class="wrap">
+						<ul>
+							<li><a href="index.html">VIEW</a></li>
+							<li><a href="services.html">SERVICES</a></li>
+							<li><a href="gallery.html">URBAN HOTEL</a></li>
+							<li class="active"><a href="contact.html">INQUIRY FORM</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</div>
+			</div>
+		
+			<div class="clear"> </div>
+		
+			<div class="content">
+				<div class="wrap">
+			
+					<div class="contact">
+				<div class="section group">				
+				<div class="col span_1_of_3">
+					<div class="contact_info">
+			    	 	
+      				</div>
+      			<div class="company_address">s
+				     	<h3>Company Information :</h3>
+						    	<p>Address:</p>
+						   		<p>2nd Flr. PGMC Bldg. 76 Calbayog cor. DM Guevarra St., Mandaluyong City</p>
+						   		<p>Manila Philippines</p>
+				   		<p>Phone:+63(XXX) YYY ZZZZ</p>
+				   		<p>Fax: 8990</p>
+				 	 	<p>Email: <span>8990cares@8990hodings.com</span></p>
+				   		<p>Follow us on: <span>Facebook</span>, <span>Twitter</span></p>
+				   </div>
+				</div>				
+			<div class="col span_2_of_3">
+				  <div class="contact-form">
+				  	<h3>Message</h3>
+                        <div class="contact-msg">
+							<span>FULL NAME</span>
+							<input id="text" name="userName" type="text">
+						    
+							<span>E-MAIL ID</span>
+							<input id="email" name="userEmail" type="text">
+							
+							<span>MOBILE NUMBER</span>
+							<input id="number" name="userPhone" type="text">
+                            
+							<span>MESSAGE</span>
+							<textarea id="message" name="userMsg"></textarea><br>
+							
+							<a href="#"><button class="submit" onclick="submitButton()">Submit</button></a><br>
+							<a href="/hotel back/HMS_html/booking.html"><button class="payhere">Book Here</button></a>
+                       </div>
+
+				    </div>
+  				</div>				
+			  </div>
+			</div>
+				</div>
+				<div class="clear"> </div>
+				<div class="boxs">
+				<div class="wrap">
+				<div class="box">
+				
+				</div>
+				<div class="box">
+					 
+				</div>
+				<div class="clear"> </div>
+			</div>
+			
+		</div>
+			</div>
+			
+		</div>
+		<script >
+          function submitButton(){
+			  const inputTxt = document.getElementById('text').value;
+			  const inputEmail = document.getElementById('email').value;
+			  const inputNumber = document.getElementById('number').value;
+			  const inputMsg = document.getElementById('message').value;
+
+			  const data =[];
+              data.push("Full Name: "+ inputTxt)
+              data.push("Email: "+ inputEmail)
+			  data.push("Contact Number: "+ inputNumber)
+			  data.push("Message: "+ inputMsg)
+
+              const data_string = JSON.stringify(data);
+
+			  const file = new Blob([data_string], {type: 'text+"\n"'});
+
+			 const anchor = document.createElement('a');
+             anchor.href = URL.createObjectURL(file);
+             anchor.download = ('save.Request')
+             
+			 if(inputTxt=="" || inputEmail=="" || inputNumber=="" || inputMsg==""){
+				 alert("Please Fill Up all the Form")
+				 return false;
+			 }
+			 else{
+				 alert("Submit Request Please, Wait To Respose to your Email")
+				 anchor.click();
+			 }
+			 
+
+		  }
+		</script>
+		
+	</body>
+</html>
+
